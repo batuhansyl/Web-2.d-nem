@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>to do list</title>
+    <style>
+        body {
+            background-color: lightskyblue;
+            color: white;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0; 
+        }
+        .todo-container {
+            background-color: #fff;
+            color: #000;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            width: 300px;
+        }
+        h2 {
+          text-align: center;
+          margin-bottom: 20px;
+        }
+        input[type="text"] {
+            width: 80px;
+            padding: 8px;
+            margin-right: 5px;
+            border: 1px soild #ccc;
+            border-radius: 4px;
+        }
+        button{
+            padding: 8px 12px;
+            border: none;
+            background-color: #4caf50;
+            color: white;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover{
+            background-color: #45a049;
+        }
+        ul{
+            list-style-type: none;
+            padding: 0;
+        }
+        li{
+            background: #eee;
+            margin-top: 10px;
+            padding: 8px;
+            border-radius: 4PX;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .remove{
+            color: red;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="todo-container">
+     <h2>Yapılacaklar listesi</h2>
+        <input type="text" id="todo-input" placeholder="buraya yazınız...">
+        <button id="addtask">Ekle</button>
+        <ul id="tasklist"></ul>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script>
+        $(document).ready(function() {
+            //görev ekleme
+             $('#addtask').click(function() {
+             const task = $('#todo-input').val().trim();
+             if(task !== ''){
+                $('#tasklist').append(`<li>${task}<span class="remove">&#10060;</span></li>`);
+                    $('#todo-input').val('');
+                    }
+            })
+            
+            //enter tuşu ile çalıştırma
+            $('#todo-input').keypress(function(event) {
+                if(event.which == 13) {
+                    $('#addtask').click();
+                }
+            })
+
+            //görev silme
+            $('#tasklist').on('click', '.remove', function() {
+                $(this).parent().remove();
+            })
+        })
+    </script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pixel Art</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f9f9f9;
+        }
+        #grid {
+            display: grid;
+            grid-template-columns: repeat(5, 50px);
+            grid-template-rows: repeat(5, 50px);
+            gap: 5px;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .pixel {
+            width: 50px;
+            height: 50px;
+            background-color: white;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .renk {
+            display: inline-block;
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+            cursor: pointer;
+            border-radius: 50%;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+            transition: transform 0.2s ease;
+        }
+        .renk:hover {
+            transform: scale(1.1);
+        }
+        button {
+            margin: 10px;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: #fff;
+            background-color: #007bff;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <div class="renk" style="background-color: red;"></div>
+        <div class="renk" style="background-color: blue;"></div>
+        <div class="renk" style="background-color: green;"></div>
+        <div class="renk" style="background-color: yellow;"></div>
+        <div class="renk" style="background-color: black;"></div>
+    </div>
+    <button id="temizle">Temizle</button>
+    <button id="kaydet">Kaydet</button>
+    <div id="grid"></div>
+
+    <script>
+        $(function() {
+            for (let i = 0; i < 25; i++) $('#grid').append('<div class="pixel"></div>');
+
+            let secilenRenk = 'white';
+            $('.renk').click(function() {
+                secilenRenk = $(this).css('background-color');
+            });
+
+            // Hem tıklama hem de sürükleme ile boyama
+            $('#grid').on('mouseenter click', '.pixel', function(e) {
+                if (e.type === 'click' || e.buttons === 1) { // Tıklama veya sol fare tuşu basılıyken
+                    $(this).css('background-color', secilenRenk);
+                }
+            });
+
+            $('#temizle').click(() => $('.pixel').css('background-color', 'white'));
+
+            $('#kaydet').click(() => {
+                html2canvas($('#grid')[0]).then(canvas => document.body.appendChild(canvas));
+            });
+        });
+    </script>
+</body>
+</html>

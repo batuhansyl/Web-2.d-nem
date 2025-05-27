@@ -1,0 +1,156 @@
+<DOCTYPE html>
+    <html lang="tr">
+        <meta charset="utf-8">
+        <header>
+            <title>Ahmet 5</title>
+        </header>
+        <body>
+            <form name="giris" action="ahmet 1.html" method="get">
+                <label>Ad:</label><input type="text"/><br/>
+                <label>Soyad:</label><input type="text"/><br/>
+                <input type="submit" value="Gönder"/>
+            </form><hr/>
+            <form>
+                Ad:<input type="text" name="isim"/><br/>
+                Soyad:<input type="text" name="soyisim"/><br/>
+                <input type="reset" value="Temizle">
+                <input type="submit" name="kaydet"/><br/>
+            </form><hr/>
+
+            <form>
+                Kullanıcı:<input type="text" name="kullanici"/><br/>
+                Şifre: <input type="password" name="sifre"/>
+            </form><hr/>
+            <form>
+                <input type="checkbox" name="kutu1" checked="on"/>HTML<br/>
+                <input type="checkbox" name="kutu2"/>CSS<br/>
+                <input type="checkbox" name="kutu3"/>Java Script
+            </form><hr/>
+            <form>
+                <input type="radio" name="seçim"/>yeah<br/>
+                <input type="radio" name="seçim"/>nu uh<br/>
+            </form><hr/>
+            
+                <form>
+                    <p>Renk seçin: <input type="color" name="renk"></p>
+                    <p>Doğum tarihi: <input type="date" name="dogumtarihi"></p>
+                    <p>Doğum günü:<input type="datetime" name="dogumgunu"></p>
+                    <p>Ay ve Yıl: <input type="month" name="ay"></p>
+                    <p>Hafta ve Yıl: <input type="week" name="hafta"></p>
+                    <p>Randevu saati: <input type="time" name="randevusaat"></p>
+                    <p>Randevu tarihi ve saati: <input type="datetime-local" name="randevutarih"></p>
+                    <p>E-posta: <input type="email" name="eposta"></p>
+                    <p>Web sayfanız: <input type="url" name="weburl"></p>
+                    Sayı (1-9): <input type="number" name="sec" min="1" max="31"/>
+                    <p>Parola: <input type="password" name="sifre"></p>
+                    <p>Aralık (1-9): <input type="range" name="secim" min="1" max="100"></p>
+                    <p>Arama: <input type="search" name="arama"></p>
+                    <p>GSM: <input type="tel" name="gsmno"></p>
+                    <input type="reset" name="reset"><hr/>
+                </form>
+                <form action="uye.html" method="post">
+                <label>Ad Soyad:</label><input type="text" name="ad"><br/><br/>
+                <label>e-Posta:</label><input type="text" name="eposta"><br/><br/>
+                <label>Şifre:</label><input type="password" name="eposta"><br/><br/>
+                <input type="radio" name="cinsiyet" value="erkek" checked="on"> Erkek<br/><br/>
+                <input type="radio" name="cinsiyet" value="kadin"> Kadın<br/><br/>
+                <input type="hidden" name="ipAdresi" value="212.175.132.130"/>
+                <button type="submit" value="Gönder">
+                 <img src="red.jpeg" width="30" height="30">
+                </button>
+                <button type="reset" value="Temizle">
+                <img src="mor.jpeg" width="30" height="30">
+                </button>
+                </form><hr/>
+                <form>
+                <select name="iller" size="1">
+                    <option value="plaka57">Sinop</option>
+                    <option value="plaka06">Ankara</option>
+                    <option value="plaka34">İstanbul</option>
+                    </select><hr/>
+                    <select name="riskharitasi" multiple>
+                        <option selected value="none">Hiçbiri</option>
+                        <optgroup label="Kirmizi">
+                        <option value="k1">Sakarya</option>
+                         <option value="k2">Konya</option>
+                         <option value="k3">Balikesir</option>
+                        </optgroup>
+                        <optgroup label="Sari">
+                         <option value="s1">Eskişehir</option>
+                         <option value="s2">Kirşehir</option>
+                         <option value="s3">Yozgat</option>
+                        </optgroup>
+                        <optgroup label="Turuncu">
+                         <option value="t1">Artvin</option>
+                         <option value="t2">Çanakkale</option>
+                         <option value="t3">Kütahya</option>
+                        </optgroup>
+                        <optgroup label="Mavi">
+                            <option value="m1">Uşak</option>
+                            <option value="m2">Batman</option>
+                            <option value="m3">Ağrı</option>
+                           </optgroup>
+                           </select><hr/>
+                        
+                        <select name="aylar" multiple>
+                            <option value="1">Ocak</option>
+                            <option value="2">Şubat</option>
+                            <option value="3">Mart</option>
+                            <option value="4">Nisan</option>
+                            <option value="5">Mayıs</option>
+                            <option value="6">Haziran</option>
+                            </select>
+                </form>
+                <form>
+                    <fieldset>
+                    <legend>Üyelik Bilgileri</legend>
+                     <label>Ad Soyad : </label>
+                     <input type="text" name="adSoyad" required="required"> <br/><br/>
+                     <label>e-Posta : </label>
+                     <input type="email" name="ePosta" required="required"> <br/><br/>
+                     <label>Doğum Tarihi : </label>
+                     <input type="date" name="dogumTarihi" required="required"> <br/><br/>
+                     <input type="submit" value="Gönder"/>
+                     <input type="reset" value="Temizle"/>
+                    </fieldset>
+                    </form>
+                <from>
+                    <fieldset>
+                        <legend>yorum yolla</legend>
+                        <label>e-Posta:</label>
+                        <input type="text" tabindex="1"/>
+                        <label>yorum</label>
+                        <textarea  rows="3" cols="20" tabindex="2"></textarea><br/>
+                        <input type="submit" value="gönder">
+                        <input type="reset" value="temizle">
+                    </fieldset>
+                </from>
+                <form>
+                    <p><b>aldığı puan</b></p>
+                    <label for="bulent">Bülent</label>
+                    <meter id="bulent" min="0" low="40" high="90" max="100" value="55"></meter>50<br/>
+                    <progress id="bulent" max="100" value="40"></progress>
+                    <label for="harun">Harun </label>
+                </form>
+                <form action="islem1.html" autocomplete="on">
+                    <input formmethod="get" placeholder="Form Metodu get|post">
+                    <input formnovalidate="formnovalidate" placeholder="Veri Tip Uyumu Kontrolsüz"></br>
+                    <input type="email" id="eposta" name="eposta" autocomplete="on" placeholder="Otomatik açık">
+                    <input type="date" id="tarihmin" name="tarihmin" min="2021-05-01">
+                    <inputtype="number" id="aralik" name="aralik" min="1" max="5" placeholder="max">
+                    <input type="password" pattern=".{6,}" title="Altı veya daha fazla" placeholder="daha
+                    fazla">
+                    <inputtype="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" placeholder = "Şifre">
+                    <inputtype="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" placeholder ="Eposta">
+                    <input type="url" pattern="https?://.+" placeholder="http:// dâhil edin">
+                    <input type="number" step="2" placeholder="Çift Sayı">
+                    <input list="hazirliste"><datalist id="hazirliste">
+                     <option value="Öğretmen">
+                     <option value="Öğrenci">
+                     <option value="Veli">
+                    </datalist>
+                    <input type="submit" value="Gönder">
+                    <input type="submit" formaction="islem2.html" value="Başka Gönder">
+                    </form>
+
+            

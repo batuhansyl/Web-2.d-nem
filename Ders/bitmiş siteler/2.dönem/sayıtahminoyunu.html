@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <h1>Sayı tahmin oyunu</h1> 
+   <p>1 ile 100 arasında bir sayı tahmin edin.</p>
+    <input type="number" id="tahminGirdisi" placeholder="tahmininizi girin">
+    <input type="button" value="tahmin et" onclick="tahminEt()">
+    <p id="sonuc"></p>
+    <script>
+            //rasgele 1 ile 100 arası sayı oluşturur
+        var rastgeleSayi = Math.floor(Math.random() * 100) + 1;    
+        var tahminSayisi = 1;
+        var tahminGirdisi = document.getElementById('tahminGirdisi');
+        var sonuc = document.getElementById('sonuc');
+
+        function tahminEt() {
+            var tahmin = parseInt(tahminGirdisi.value);
+            if (tahmin < rastgeleSayi) {
+                sonuc.textContent = 'Daha büyük bir sayı girin.';
+                tahminSayisi++;
+            } else if (tahmin > rastgeleSayi) {
+                sonuc.textContent = 'Daha küçük bir sayı girin.';
+                tahminSayisi++;
+            } else {
+                sonuc.textContent = 'Tebrikler! ' + tahminSayisi + ' denemede bildiniz.';
+            }
+        }
+        </script>
+</body>
+</html>

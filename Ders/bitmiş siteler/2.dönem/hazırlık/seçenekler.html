@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="radio" name="secenek" value="seçenek 1">Seçenek 1
+    <input type="radio" name="secenek" value="seçenek 2">Seçenek 2
+    <input type="radio" name="secenek" value="seçenek 3">Seçenek 3
+    <button id="Gonder" onclick="segs()">Gonder</button>
+    <p id="sonuc"></p>
+
+    <script>
+        function segs() {
+            var secenekler = document.getElementsByName("secenek");
+        var deger ="";
+        for(let i=0; i<secenekler.length;i++){
+            if(secenekler[i].checked){
+                deger = secenekler[i].value;
+                break;
+            }
+        }
+        document.getElementById("sonuc").innerText=deger;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+body{
+     align-items: center;
+     text-align: center;
+     margin: 0;
+     height: 100vh;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     background: linear-gradient(45deg, darkcyan, darkgoldenrod gray);
+     background-size: 200% 200%;
+     transition: background 0.2s ease;
+    
+}
+h1{
+    color: rgb(75, 92, 96);
+    text-shadow: 4px 4px 10px gray;
+    font-weight: bold;
+    font-size: 60px;
+  -webkit-text-stroke: 2px black; /* Çizgi kalınlığı ve rengi */
+  display: inline-block;
+  transition: transform 0.3s ease-in-out;
+ 
+
+}
+
+  h1:hover {
+    transform: translate(10px, -10px);
+  }
+  

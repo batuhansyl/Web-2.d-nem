@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+      function arttır() {
+        var sayi = document.getElementById("sayac").innerText;
+        sayi++;
+        document.getElementById("sayac").innerText = sayi
+      }
+      function azalt() {
+        var sayi = document.getElementById("sayac").innerText;
+        sayi--;
+        document.getElementById("sayac").innerText = sayi
+      }
+    </script>
+</head>
+<body>
+    <button onclick="arttır()">+</button>
+    <h4 id="sayac">0</h4>
+    <button onclick="azalt()">-</button>
+</body>
+</html>

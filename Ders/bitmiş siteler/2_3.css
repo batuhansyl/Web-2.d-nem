@@ -1,0 +1,9 @@
+body {
+    background-color: white; /* Varsayılan arka plan rengi */
+    transition: background-color 0.5s ease; /* Yumuşak geçiş efekti */
+}
+
+img {
+    width: 200px; /* Görsel boyutu ayarlanabilir */
+    cursor: pointer;
+}

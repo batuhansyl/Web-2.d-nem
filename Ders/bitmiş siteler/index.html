@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Taş Kağıt Makas</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: linear-gradient(to bottom, #d0f0ff, #ffffff);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: #333;
+    }
+
+    .game-container {
+      background: #ffffffdd;
+      border-radius: 16px;
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+      width: 320px;
+    }
+
+    h1 {
+      margin-bottom: 20px;
+      color: #2980b9;
+      font-size: 1.8rem;
+    }
+
+    .choices {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 25px;
+    }
+
+    .choice-button {
+      background-color: #ffffff;
+      border: 2px solid #a0d8f1;
+      border-radius: 12px;
+      width: 80px;
+      height: 80px;
+      font-size: 32px;
+      cursor: pointer;
+      transition: background-color 0.2s;
+    }
+
+    .choice-button:hover {
+      background-color: #d6f0ff;
+    }
+
+    .result {
+      font-size: 1rem;
+      margin: 15px 0;
+      min-height: 40px;
+    }
+
+    .scoreboard {
+      margin-bottom: 10px;
+      font-size: 0.95rem;
+    }
+
+    .reset-btn {
+      margin-top: 10px;
+      background-color: #ffeaa7;
+      border: none;
+      padding: 8px 14px;
+      font-size: 14px;
+      border-radius: 8px;
+      cursor: pointer;
+      color: #2d3436;
+    }
+
+    .reset-btn:hover {
+      background-color: #ffdf70;
+    }
+  </style>
+</head>
+<body>
+  <div class="game-container">
+    <h1>Taş Kağıt Makas</h1>
+
+    <div class="scoreboard">
+      👤 Oyuncu: <span id="playerScore">0</span> &nbsp;&nbsp;
+      💻 Bilgisayar: <span id="computerScore">0</span>
+    </div>
+
+    <div class="choices">
+      <button class="choice-button" onclick="playGame('taş')" title="Taş">🧱</button>
+      <button class="choice-button" onclick="playGame('kağıt')" title="Kağıt">📄</button>
+      <button class="choice-button" onclick="playGame('makas')" title="Makas">✂️</button>
+    </div>
+
+    <div class="result" id="result"></div>
+
+    <button class="reset-btn" onclick="resetScore()">🔄 Skoru Sıfırla</button>
+  </div>
+
+  <script>
+    let playerScore = 0;
+    let computerScore = 0;
+
+    function playGame(userChoice) {
+      const choices = ['taş', 'kağıt', 'makas'];
+      const computerChoice = choices[Math.floor(Math.random() * choices.length)];
+      let result = '';
+
+      if (userChoice === computerChoice) {
+        result = `🤝 Berabere! <strong>${computerChoice}</strong>`;
+      } else if (
+        (userChoice === 'taş' && computerChoice === 'makas') ||
+        (userChoice === 'kağıt' && computerChoice === 'taş') ||
+        (userChoice === 'makas' && computerChoice === 'kağıt')
+      ) {
+        result = `🎉 Kazandınız! Bilgisayar <strong>${computerChoice}</strong> seçti.`;
+        playerScore++;
+      } else {
+        result = `😢 Kaybettiniz. Bilgisayar <strong>${computerChoice}</strong> seçti.`;
+        computerScore++;
+      }
+
+      document.getElementById('result').innerHTML = result;
+      document.getElementById('playerScore').textContent = playerScore;
+      document.getElementById('computerScore').textContent = computerScore;
+    }
+
+    function resetScore() {
+      playerScore = 0;
+      computerScore = 0;
+      document.getElementById('playerScore').textContent = playerScore;
+      document.getElementById('computerScore').textContent = computerScore;
+      document.getElementById('result').textContent = '';
+    }
+  </script>
+</body>
+</html>

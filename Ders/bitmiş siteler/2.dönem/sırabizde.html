@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geri Sayım</title>
+    <script>
+        function geriSayimBaslat() {
+            var sayilar = ["sıfır", "bir", "iki", "üç"];
+            var geriSayimElemani = document.createElement('p');
+            document.body.appendChild(geriSayimElemani);
+
+            var aralik = setInterval(() => {
+                var gecenSaniye = Math.floor((Date.now() - baslangicZamani) / 1000);
+                var kalanSaniye = 60 - gecenSaniye;
+
+                if (kalanSaniye < 4) {
+                    geriSayimElemani.textContent = sayilar[kalanSaniye];
+                } else {
+                    geriSayimElemani.textContent = kalanSaniye;
+                }
+
+                if (kalanSaniye <= 0) {
+                    clearInterval(aralik);
+                }
+            }, 1000);
+
+            var baslangicZamani = Date.now();
+        }
+    </script>
+</head>
+<body onload="geriSayimBaslat()"></body>
+</body>
+</html>
